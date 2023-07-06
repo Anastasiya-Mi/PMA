@@ -8,9 +8,10 @@ const analyticsRoutes = require('./routes/analytics');
 const categoryRoutes = require('./routes/category');
 const orderRoutes = require('./routes/order');
 const positionRoutes = require('./routes/position');
+const keys = require('./config/keys');
 
 const app = express();
-mongoose.connect('mongodb://Nastia:fhu275YLK@ac-a0wslyr-shard-00-00.l79puhl.mongodb.net:27017,ac-a0wslyr-shard-00-01.l79puhl.mongodb.net:27017,ac-a0wslyr-shard-00-02.l79puhl.mongodb.net:27017/?ssl=true&replicaSet=atlas-12zcbf-shard-0&authSource=admin&retryWrites=true&w=majority')
+mongoose.connect(keys.mongoURI)
 .then(()=> console.log('gg'))
 .catch(error => console.log(error))
 
